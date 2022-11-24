@@ -1,0 +1,261 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <title>391565 -  PINAR OGURLU</title>
+    <style type="text/css">
+	
+	
+        body {
+            margin: 0px;
+            margin-left: 15px;
+            font-family: Arial Black;
+		    background-color: #f4d7e3e1;
+			
+
+        }
+
+
+        textarea {
+            resize: none;
+			padding-top:15px;
+			
+        }
+
+
+        select {
+            height: 30px;
+            width: 150px;
+			
+
+        }
+
+
+        .p1 {
+            float: right;
+			 margin-left: 15px;
+			 
+        }
+		
+
+        .p1 textarea {
+            background-color: #a3b8eb70;
+            color: white;
+            font-family: sans-serif;
+			border: 3px solid #ddaadd99;
+			
+			 
+			
+        }
+
+
+        .text {
+            margin-top: 5px;
+            margin-left: 0px;
+            color: white;
+            width: 200px;
+            height: 300px;
+            display: inline-block;	
+			border: 3px solid #ddaadd99;
+			background-color: #ff5c00ff;
+        }
+		
+
+        .p2 {
+            float: left;
+            margin-left: 15px;
+        }
+
+        
+        .border {
+            margin-right: 35px;
+            background-color: #d400aae1;
+			border: 3px solid #ddaadd99;
+            color: white;
+            width: 200px;
+            height: 380px;
+            display: inline-block;
+            float: left;
+			
+        }
+
+        .p2 {
+            float: left;
+            margin-left: 25px;
+        }
+
+
+        .dokuz{
+    		width:55%;
+    		background-color: #a3b8eb70;
+			border: 3px solid #ddaadd99;
+    		margin-top: 2%;
+    		margin-left: 155px;
+    		display: inline-block;
+    		
+    	}
+		
+		
+		
+    </style>
+</head>
+
+
+<body>
+ <script type="text/javascript">
+ 
+ 
+        function yaz() {
+            document.getElementById("cikti").innerHTML = document.getElementById("metin").value;
+        }
+
+        function font() {
+            var p = Number(document.getElementById("fontstyle").value);
+			
+
+            if (p == 1) {
+			    document.getElementById("cikti").style.fontFamily = "Arial Black";
+            } 
+			
+			else if (p == 2) {
+                document.getElementById("cikti").style.fontFamily = "Broadway";
+            } 
+			
+			else if (p == 3) {
+                document.getElementById("cikti").style.fontFamily = "Comic Sans MS";
+            } 
+			
+			else if (p == 4) {
+                document.getElementById("cikti").style.fontFamily = "Lucida Console";
+            } 
+			
+			else if (p == 5) {
+                document.getElementById("cikti").style.fontFamily = "Segoe Script";
+            }
+
+        }
+
+        function font_size() {
+            var font_size = Number(document.getElementById("yazi_boyutu").value);
+            document.getElementById("cikti").style.fontSize = font_size + "px";
+        }
+		
+
+        function font_color() {
+            document.getElementById("cikti").style.color = document.getElementById("fontcolor").value;
+        }
+		
+
+        function kenar() {
+            var o = document.getElementById("borders").value;
+
+            if (o == 1) {
+                document.getElementById("son").style.border = "solid";
+            } 
+			
+			else if (o == 2) {
+                document.getElementById("son").style.border = "dotted";
+            } 
+			
+			else if (o == 3) {
+                document.getElementById("son").style.border = "double";
+            }
+			
+        }
+		
+
+        function kenar_kalinligi() {
+
+            var kenarlik_kalinligi = Number(document.getElementById("kenarkalinligi").value);
+            document.getElementById("son").style.borderWidth = kenarlik_kalinligi + "px";
+        }
+		
+
+        function border_rengi() {
+            document.getElementById("son").style.borderColor = document.getElementById("border_rengi").value;
+        }
+		
+
+        function arkaplan_rengi() {
+            document.getElementById("son").style.backgroundColor = document.getElementById("arkaplan_rengi").value;
+        }
+		
+		
+		
+    </script>
+	
+    <div class="p1">
+	
+	    <br><br><br><br>
+		
+        <h4>Metin</h4>
+		
+        <textarea name="metin" id="metin" cols="150" rows="15" onkeyup="yaz()"></textarea>
+    </div>
+	
+    <div class="text">
+        <div class="p2">
+		
+            <h4>Yazı Tipi</h4>
+            <select id="fontstyle" onchange="font()" >
+                <option value="0">Seçiniz</option>
+                <option value="1">Arial Black</option>
+                <option value="2">Broadway</option>
+                <option value="3">Comic Sans MS</option>
+                <option value="4">Lucida Console</option>
+                <option value="5">Segoe Script</option>
+            </select>
+        </div>
+		
+		
+        <div class="p2">
+            <h4>Yazı Boyutu</h4>
+            <input type="range" oninput="font_size()" id="yazi_boyutu" min="10" max="100">
+        </div>
+		
+        <div class="p2">
+		
+            <h4>Yazı Rengi</h4>
+            <input type="color" oninput="font_color()" id="fontcolor">
+        </div>
+    </div>
+	
+	
+    <div class="border">
+        <div class="p2">
+		
+            <h4>Border Stili</h4>
+            <select id="borders" onchange="kenar()">
+                <option value="0">Seçiniz</option>
+                <option value="1">Tam Çizgi</option>
+                <option value="2">Nokta Çerçeve</option>
+                <option value="3">Çift Çizgili</option>
+            </select>
+			
+        </div>
+		
+        <div class="p2">
+            <h4>Border Kalınlığı</h4>
+            <input type="range" id="kenarkalinligi" oninput="kenar_kalinligi()" min="1" max="10" value="5">
+        </div>
+		
+        <div class="p2">
+            <h4>Border Rengi</h4>
+            <input type="color" id="border_rengi" oninput="border_rengi()">
+        </div>
+		
+        <div class="p2">
+            <h4>Arkaplan Rengi</h4>
+            <input type="color" id="arkaplan_rengi" oninput="arkaplan_rengi()">
+        </div>
+    </div>
+    
+	 <div class="dokuz" id="son">
+        <h4>Sonuç:</h4>
+        <p id="cikti"></p>
+    </div>
+
+    
+</body>
+</html>
